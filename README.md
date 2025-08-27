@@ -50,46 +50,59 @@ Before diving into SQL, it’s important to understand the dataset thoroughly. T
 ### 4. Querying the Data
 After the data is inserted, various SQL queries can be written to explore and analyze the data.
 #### Basic EDA:
-```sql
+
 -- 1. Count total number of records in the dataset
+```sql
 SELECT COUNT(*) 
 FROM spotify;
+```
 
 -- 2. Count the number of unique artists
+```sql
 SELECT COUNT(DISTINCT artist) 
 FROM spotify;
-
+```
 
 -- 3. Find all unique album types
+```sql
 SELECT DISTINCT album_type 
 FROM spotify;
-
+```
 -- 4. Find the longest song (maximum duration in minutes)
+```sql
 SELECT MAX(duration_min) 
 FROM spotify;
+```
 
 -- 5. Find the shortest song (minimum duration in minutes)
+```sql
 SELECT MIN(duration_min) 
 FROM spotify;
+```
 
 -- 6. Retrieve all songs with zero duration (potential data errors)
+```sql
 SELECT * 
 FROM spotify
 WHERE duration_min = 0;
+```
 
 -- 7. Delete records with zero duration (data cleaning step)
+```sql
 DELETE 
 FROM spotify
 WHERE duration_min = 0;
+```
 
 -- 8. Find all unique channels
+```sql
 SELECT DISTINCT channel 
 FROM spotify;
-
+```
 -- 9. Find all unique platforms where songs are most played
+```sql
 SELECT DISTINCT most_played_on 
 FROM spotify;
-
 ```
 
 
